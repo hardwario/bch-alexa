@@ -20,8 +20,13 @@ git clone https://github.com/bigclownlabs/bch-alexa.git
 ```
 cd bch-alexa
 ```
+### Windows
 ```
 pip install --editable .
+```
+### Ubuntu and macOS
+```
+sudo pip3 install --upgrade --no-cache-dir --editable .
 ```
 ---
 
