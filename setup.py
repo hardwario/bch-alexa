@@ -8,6 +8,7 @@ setup(
 	install_requires=[
 		"Requests",
 		"Click",
+        "AWSIoTPythonSDK",
 	],
 	entry_points='''
 		[console_scripts]
