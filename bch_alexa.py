@@ -7,16 +7,17 @@ import platform
 import os
 import getpass
 import click
-import AWSIoTPythonSDK
+from pathlib import Path
 
 @click.command()
 @click.option("--certs", is_flag=True, help="Certs for download your certificates to communicating with Alexa")
 
+
 def cli(certs):
     if certs:
         userid = input("Enter your userID\nID: ")
-        userid_file = open("id.txt", "w")
-        userid_file = file.write(userid)
+        userid_file = open(str(Path(str(Path.home()) + "/bigclown-cert/id.txt")), "w")
+        userid_file.write(userid)
 
         url = 'https://8y0xxdw4m9.execute-api.eu-west-1.amazonaws.com/register'
         data = '''{
@@ -75,6 +76,3 @@ def cli(certs):
         response_second = requests.post(url_second, data=data_second)
 
         click.echo(str(response_second.text)[1:-1])
-
-    else:
-        click.echo("Use bch-alexa --help for help")
