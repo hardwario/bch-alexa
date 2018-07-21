@@ -2,8 +2,7 @@
     "name": "bch-alexa",
     "version": "1.0.0",
     "scripts": {
-        "start": "node bch-alexa.js",
-        "test": "node test.js"
+        "start": "node bch-alexa.js"
     },
     "dependencies": {
         "aws-iot-device-sdk": "^2.2.1",
