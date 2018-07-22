@@ -8,7 +8,6 @@ import os
 import getpass
 import click
 from pathlib import Path
-from pynpm import NPMPackage
 
 @click.command()
 @click.option("--certs", is_flag=True, help="Certs for download your certificates to communicating with Alexa")
@@ -80,14 +79,13 @@ def cli(certs, install):
         click.echo(str(response_second.text)[1:-1])
 
     if install:
-        pkg = NPMPackage(str(Path(str(Path.home()) + "/bigclown-cert/package.json")))
         click.echo("Downloading npm script")
         bch_alexa_js_file = open(str(Path(str(Path.home()) + "/bigclown-cert/bch-alexa.js")), "w")
         bch_alexa_package_js_file = open(str(Path(str(Path.home()) + "/bigclown-cert/package.json")), "w")
         bch_alexa_js_file.write(requests.get("https://raw.githubusercontent.com/bigclownlabs/bch-alexa/master/bch-alexa.js").text)
         bch_alexa_package_js_file.write(requests.get("https://raw.githubusercontent.com/bigclownlabs/bch-alexa/master/package.json").text)
         click.echo("Downloaded successfully\nRunning 'npm install'")
-        pkg.install()
+        os.system("npm install " + str(Path(str(Path.home()) + "/bigclown-cert/\n")))
         click.echo("Start bch-alexa as pm2 service")
         os.system("pm2 start " + str(Path(str(Path.home()) + "/bigclown-cert/bch-alexa.js")))
         os.system("pm2 save")

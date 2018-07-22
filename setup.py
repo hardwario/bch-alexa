@@ -8,7 +8,6 @@ setup(
 	install_requires=[
 		"Requests",
 		"Click",
-		"pynpm",
 	],
 	entry_points='''
 		[console_scripts]
