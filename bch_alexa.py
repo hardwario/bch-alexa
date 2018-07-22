@@ -90,8 +90,5 @@ def cli(certs, install):
         pkg.install()
         click.echo("Start bch-alexa as pm2 service")
         os.system("pm2 start " + str(Path(str(Path.home()) + "/bigclown-cert/bch-alexa.js")))
+        os.system("pm2 save")
         click.echo("pm2 service started successfully")
-
-
-    else:
-        click.echo("Use command 'bch-alexa --help' for help")

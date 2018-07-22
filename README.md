@@ -22,12 +22,20 @@ cd bch-alexa
 ```
 ### Windows
 ```
-pip install --editable .
+pip install --upgrade --no-cache-dir --editable .
 ```
 ### Ubuntu and macOS
 ```
-sudo pip3 install --upgrade --no-cache-dir --editable .
+sudo pip install --upgrade --no-cache-dir --editable .
 ```
+## How to use
+1. Ask Alexa on your ID: "Alexa, ask bigclown to show my id". Open your Alexa app and copy ID from BigClown card.
+2. Instal dependencies: [Python](https://www.python.org/downloads/), [pip](https://pip.pypa.io/en/stable/installing/), [Node.js](https://nodejs.org/en/download/), [pm2](https://www.npmjs.com/package/pm2)
+3. Install bch-alexa by following upwords
+4. Run command 'bch-alexa --certs' paste ID from Alexa app
+5. Make sure that console told you 'Your certificates are downloaded successfully!'
+6. If 5th point is true, run command 'bch-alexa --install'
+7. Now subscribe localhost mqtt with topic 'alexa/strip' and say to Alexa 'Alexa, ask bigclown to set strip to red' and on your mqtt client will be mqtt request with topic 'alexa/strip' and payload 'red'
 ---
 
 Made with &#x2764;&nbsp; by [**HARDWARIO s.r.o.**](https://www.hardwario.com/) in the heart of Europe.
