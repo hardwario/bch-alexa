@@ -24,6 +24,10 @@ client.on('connect', function () {
                 userid = (data.toString("utf-8")).substring(0, (data.length));
             }
 
+            else if (process.platform == "win32") {
+                userid = (data.toString("utf-8")).substring(0, (data.length));
+            }
+
             var device = awsIot.device({
                 keyPath: os.homedir().toString() + path.join("/bigclown-cert/") + userid + ".private.key",
                certPath: os.homedir().toString() + path.join("/bigclown-cert/") + userid + ".cert.pem",
