@@ -9,6 +9,7 @@ import getpass
 import click
 from pathlib import Path
 
+
 @click.command()
 @click.option("--certs", is_flag=True, help="Certs for download your certificates to communicating with Alexa")
 @click.option("--install", is_flag=True, help="Download node script and turn it to pm2")
@@ -77,16 +78,17 @@ def cli(certs, install):
         click.echo(str(response_second.text)[1:-1])
 
     if install:
-        click.echo("Downloading npm script")
+        GREEN = "\33[32m"
+        print(GREEN + "Downloading npm script")
         bch_alexa_js_file = open(str(Path(str(Path.home()) + "/bigclown-cert/bch-alexa.js")), "w")
         bch_alexa_package_js_file = open(str(Path(str(Path.home()) + "/bigclown-cert/package.json")), "w")
         bch_alexa_js_file.write(requests.get("https://raw.githubusercontent.com/bigclownlabs/bch-alexa/master/bch-alexa.js").text)
         bch_alexa_package_js_file.write(requests.get("https://raw.githubusercontent.com/bigclownlabs/bch-alexa/master/package.json").text)
         bch_alexa_js_file.close()
         bch_alexa_package_js_file.close()
-        click.echo("Downloaded successfully\nRunning 'npm install'")
+        print(GREEN + "Downloaded successfully\nRunning 'npm install'")
         os.system("npm install " + (str(Path(str(Path.home()) + "/bigclown-cert/"))))
-        click.echo("Start bch-alexa as pm2 service")
+        print(GREEN + "Start bch-alexa as pm2 service")
         os.system("pm2 start " + str(Path(str(Path.home()) + "/bigclown-cert/bch-alexa.js")))
         os.system("pm2 save")
-        click.echo("pm2 service started successfully")
+        print(GREEN + "pm2 service started successfully")
