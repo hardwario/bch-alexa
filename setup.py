@@ -8,6 +8,7 @@ setup(
 	install_requires=[
 		"Requests",
 		"Click",
+		"termcolor",
 	],
 	entry_points='''
 		[console_scripts]
