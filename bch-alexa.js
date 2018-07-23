@@ -37,16 +37,9 @@ client.on('connect', function () {
                         message_localhost = message.toString();
                         topic_localhost = topic.toString();
 
-                        if (message.toString() != messgae_aws && message.toString() != "get") {
+                        if (message.toString() != messgae_aws) {
                             device.publish((topic_localhost.replace("alexa", userid)), message.toString());
                         }
-
-                        else if (message.toString() == "get") {
-                            device.publish((((topic.toString()).replace("alexa", userid)).substring(0, (topic.toString().length-4))), message_localhost);
-                        }
-                        
-
-                        
                 });
             
 
@@ -64,14 +57,9 @@ client.on('connect', function () {
                         messgae_aws = payload.toString();
                         topic_aws = topic.toString();
 
-                        if (payload.toString() != message_localhost && payload.toString() != "get" && (topic.toString() + "/get") != topic.toString()) {
-                            client.publish(((topic.toString()).replace(userid, "alexa")), payload.toString());
-                        }
-
-                        else if (payload.toString() == "get") {
+                        if (payload.toString() != message_localhost) {
                             client.publish(((topic.toString()).replace(userid, "alexa")), payload.toString());
                         }
                     });
-
         }});
     });
