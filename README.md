@@ -1,8 +1,8 @@
-<a href="https://www.bigclown.com/"><img src="https://bigclown.sirv.com/logo.png" width="200" alt="BigClown Logo" align="right"></a>
+<a href="https://www.hardwario.com/"><img src="https://www.hardwario.com/ci/assets/hw-logo.svg" width="200" alt="HARDWARIO Logo" align="right"></a>
 
-#  BigClown Alexa app
+#  HARDWARIO Alexa app
 
-This repository contains BigClown Alexa app for connecting between AWS and BigClown.
+This repository contains HARDWARIO Alexa app for connecting between AWS and HARDWARIO.
 
 
 ## License
@@ -29,7 +29,7 @@ pip install --upgrade --no-cache-dir --editable .
 sudo pip install --upgrade --no-cache-dir --editable .
 ```
 ## How to use
-1. Ask Alexa on your ID: "Alexa, ask bigclown to show my id". Open your Alexa app and copy ID from BigClown card.
+1. Ask Alexa on your ID: "Alexa, ask bigclown to show my id". Open your Alexa app and copy ID from HARDWARIO card.
 2. Instal dependencies: [Python](https://www.python.org/downloads/), [pip](https://pip.pypa.io/en/stable/installing/), [Node.js](https://nodejs.org/en/download/), [pm2](https://www.npmjs.com/package/pm2)
 3. Install bch-alexa by following upwords
 4. Run command 'bch-alexa --certs' paste ID from Alexa app
