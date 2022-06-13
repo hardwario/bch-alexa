@@ -38,4 +38,4 @@ sudo pip install --upgrade --no-cache-dir --editable .
 7. Now subscribe localhost mqtt with topic 'alexa/strip' and say to Alexa 'Alexa, ask bigclown to set strip to red' and on your mqtt client will be mqtt request with topic 'alexa/strip' and payload 'red'
 ---
 
-Made with &#x2764;&nbsp; by [**HARDWARIO s.r.o.**](https://www.hardwario.com/) in the heart of Europe.
+Made with &#x2764;&nbsp; by [**HARDWARIO a.s.**](https://www.hardwario.com/) in the heart of Europe.
